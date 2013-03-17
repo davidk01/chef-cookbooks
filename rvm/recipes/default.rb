@@ -18,12 +18,13 @@ end
  'libxslt-dev', 'libgdbm-dev', 'ncurses-dev', 'automake',
  'libffi-dev'].each { |p| package p }
 
-bash "install-rvm-ruby1.9.3-bundler-chef" do
+bash "install-rvm-ruby1.9.3-bundler-chef-librarian" do
   code <<-EOF
     curl -L https://get.rvm.io | bash
     source /etc/profile.d/rvm.sh
     rvm install 1.9.3
     gem install bundler
     gem install chef
+    gem install librarian
   EOF
 end
